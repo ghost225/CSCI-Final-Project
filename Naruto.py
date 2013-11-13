@@ -129,6 +129,7 @@ def battle():
             pcharge = False
             ocharge = False
             
+            #player turn code#
             while turn == 1:
                 print "You watch your opponent" 
                 print "the enemy is %s" % Dist
@@ -144,7 +145,15 @@ def battle():
                     if fight1 == 1:
                         if Range >= 1:
                             print "You are too far from the opponent to do that!"
-                        else: 
+                        else:
+                            print "you attack with taijutsu"
+                            if odef == True:
+                                if o.stamina > 0:
+                                    o.stamina -= p.baseA
+                                else:
+                                    o.health -= p.baseA
+                            else:
+                                o.health -= p.baseA
                             
                     if fight1 == 2:
                         fight2 = raw_input("Which jutsu will you use? offensive: 1, defensive 2")
