@@ -113,13 +113,13 @@ def battle():
             #the range variables, determines what moves can be used
             Range = 0
             Dist = ""
-            if Range = 0:
+            if Range == 0:
                 Dist = "Melee Range"
-            if Range = 1:
+            if Range == 1:
                 Dist = "Near"
-            if Range = 2:
+            if Range == 2:
                 Dist = "Middle"
-            if Range = 3:
+            if Range == 3:
                 Dist = "Far"
             #is the player or oppoenent defending?#  
             odef = False
@@ -132,9 +132,9 @@ def battle():
             while turn == 1:
                 print "You watch your opponent" 
                 print "the enemy is %s" % Dist
-                if odef = True:
+                if odef == True:
                     print "the enemy is in a defensive stance"
-                if pdef = True:
+                if pdef == True:
                     print "You are in a defensive stance, you still have %s Stamina" % str(p.stamina)
                 fight0 = raw_input("What do you do? ____ Attack: 1, Defend: 2, Build Chakra: 3, use an item: 4, move: 5.")
                 fight0 = int(fight0)
