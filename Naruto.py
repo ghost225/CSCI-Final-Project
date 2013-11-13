@@ -110,9 +110,32 @@ def battle():
                 turn = 1
             else:
                 turn = 2
+            #the range variables, determines what moves can be used
             Range = 0
+            Dist = ""
+            if Range = 0:
+                Dist = "Melee Range"
+            if Range = 1:
+                Dist = "Near"
+            if Range = 2:
+                Dist = "Middle"
+            if Range = 3:
+                Dist = "Far"
+            #is the player or oppoenent defending?#  
             odef = False
+            pdef = False
+            
+            #are you or the opponent charging mp?
+            pcharge = False
+            ocharge = False
+            
             while turn == 1:
+                print "You watch your opponent" 
+                print "the enemy is %s" % Dist
+                if odef = True:
+                    print "the enemy is in a defensive stance"
+                if pdef = True:
+                    print "You are in a defensive stance, you still have %s Stamina" % str(p.stamina)
                 fight0 = raw_input("What do you do? ____ Attack: 1, Defend: 2, Build Chakra: 3, use an item: 4, move: 5.")
                 fight0 = int(fight0)
                 if fight0 == 1:
@@ -121,6 +144,8 @@ def battle():
                     if fight1 == 1:
                         if Range >= 1:
                             print "You are too far from the opponent to do that!"
+                        else: 
+                            
                     if fight1 == 2:
                         fight2 = raw_input("Which jutsu will you use? offensive: 1, defensive 2")
                         fight2 = int(fight2)
@@ -128,8 +153,9 @@ def battle():
                             pass
                         if fight2 == 2:
                             pass
-                        else:
-                            pass
+                if fight0 == 2:
+                    print "You settle into a defenseive stance"
+                    pdef = True
                         #end turn and go to opponent ai
 
 
