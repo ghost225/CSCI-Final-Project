@@ -154,18 +154,106 @@ class opponent (object):
 
 #---------- bosses-------------------------Creator: Aaron stall--------------#
 class gaara(object):
-    pass
+     def __init__(self, local = "Hidden Sand", baseA = 6, speed = 5, baseS = 5, baseC = 200, baseST = 150, baseH = 200, health = 200, chakra = 200, invertory = [], jutsu = [], style = "ninjutsu", gekkei = "none"):
+        object.__init__(self)
+        self.baseH = 200
+        self.baseC = 200
+        self.health = 200
+        self.chakra = 200
+        self.baseA = 6
+        self.baseST = 150
+        self.baseS = 5
+        self.speed = 5
+        self.inventory = []
+        self.jutsu = []
+        self.local = "Hidden Sand"
+        self.style = "ninjutsu"
+        self.gekkei = "none"
+        
 class sasuke(object):
-    pass
+     def __init__(self, local = "Hidden Leaf", baseA = 10, speed = 20, baseS = 20, baseC = 125, baseST = 50, baseH = 150, health = 150, chakra = 125, inventory = [], jutsu = [], style = "ninjutsu", gekkei = "sharingan"):
+        object.__init__(self)
+        self.baseH = 150
+        self.baseC = 125
+        self.health = 150
+        self.chakra = 125
+        self.baseA = 10
+        self.baseST = 50
+        self.baseS = 20
+        self.speed = 20
+        self.inventory = []
+        self.justu = []
+        self.local = "Hidden Leaf"
+        self.style = "ninjutsu"
+        self.gekkei = "sharingan"
 
 class naruto (object):
-    pass
+    def __init__(self, local = "Hidden Leaf", baseA = 7, speed = 15, baseS = 15, baseC = 200, baseST = 100, baseH = 100, health = 100, chakra = 200, inventory = [], jutsu = [], style = "taijutsu", gekkai = "none"):
+        object.__init__(self)
+        self.baseH = 100
+        self.baseC = 200
+        self.health = 100
+        self.chakra = 200
+        self.baseA = 7
+        self.baseST = 100
+        self.baseS = 15
+        self.speed = 15
+        self.inventory = []
+        self.jutsu = []
+        self.local = "Hidden Leaf"
+        self.style = "taijutsu"
+        self.gekkei = "none"
 
 class neji(object):
-    pass
+    def __init__(self, local = "Hidden Leaf", baseA = 8, speed = 15, baseS = 15, baseC = 150, baseST = 75, baseH = 125, health = 125, chakra = 150, inventory = [], jutsu = [], style = "taijutsu", gekkei = "byakugan"):
+        object.__init__(self)
+        self.baseH = 125
+        self.baseC = 150
+        self.health = 125
+        self.chakra = 150
+        self.baseA = 8
+        self.baseST = 75
+        self.baseS = 15
+        self.speed = 15
+        self.inventory = []
+        self.justu = []
+        self.local = "Hidden Leaf"
+        self.style = "taijutsu"
+        self.gekkei = "byakugan"
 
 class lee (object):
-    pass
+    def __init__(self, local = "Hidden Leaf", baseA = 9, speed = 20, baseS = 20, baseC = 50, baseST = 100, baseH = 100, health = 100, chakra = 50, inventory = [], jutsu = [], style = "taijutsu", gekkei = "none"):
+        object.__init__(self)
+        self.baseH = 100
+        self.baseC = 50
+        self.health = 100
+        self.chakra = 50
+        self.baseA = 9
+        self.baseST = 100
+        self.baseS = 20
+        self.speed = 20
+        self.inventory = []
+        self.jutsu = []
+        self.local = "Hidden Leaf"
+        self.style = "taijutsu"
+        self.gekkei = "none"
+        
+class kiba (object):
+    def __init__(self, local = "Hidden Leaf", baseA = 6, speed = 15, baseS = 15, baseC = 75, baseST = 75, baseH = 100, health = 100, chakra = 75, inventory = [], jutsu = [], style = "taijutsu", gekkei = "none"):
+        object.__init__(self)
+        self.baseH = 100
+        self.baseC = 75
+        self.health = 100
+        self.chakra = 75
+        self.baseA = 6
+        self.baseST = 75
+        self.baseS = 15
+        self.speed = 15
+        self.inventory = []
+        self.jutsu = []
+        self.local = "Hidden Leaf"
+        self.style = "taijutsu"
+        self.gekkei = "none"
 
 #-------------------battle mechanic-----creator: Caleb Plew--------------------#
 
