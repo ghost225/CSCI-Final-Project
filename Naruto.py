@@ -3,7 +3,7 @@
 # Purpose: A Text based arena combat game based on the naruto tv series.
 # we opted to use the command line interface rather than implement a gui
 # this allowed us to spend more time on a more complicated battle system
-# that and the command line interface has a certain minimilistic appeal.
+# that and the command line interface has a certain minimalist appeal.
 #
 # Author:   Cplew (Caleb Plew) and Aaron stall
 #
@@ -11,7 +11,7 @@
 #-------------------------------------------------------------------------------
 
 
-#------------------------ classes and charecters (mostly aarons work) -----------#
+#------------------------ classes and characters (mostly aarons work) -----------#
 import random
 from random import *
 import math
@@ -21,9 +21,8 @@ import cPickle
 
 
 class player(object):
-    def __init__(self, local = "home", points = 1000, score = 0, baseA = 5,bandages = 5, foodpills = 10, kunai = 10, shruiken = 5,speed = 10, baseS = 10, baseC = 100 , baseST = 50, stamina = 50, baseH = 100, health = 100, chakra = 100, jutsu1 = 0, jutsu2 = 0, jutsu3 = 0, jutsu4 = 0, style = "none", gekkei = "none"):
+    def __init__(self, local = "home", score = 0, baseA = 5,bandages = 5, foodpills = 10, kunai = 10, shruiken = 5,speed = 10, baseS = 10, baseC = 100 , baseST = 50, stamina = 50, baseH = 100, health = 100, chakra = 100, jutsu1 = 0, style = "none"):
         object.__init__(self)
-        self.points = 100
         self.score = 0
         self.baseH = 100
         self.baseC = 100
@@ -38,13 +37,9 @@ class player(object):
         self.kunai = 5
         self.bandages = 5
         self.shruiken = 5
-        self.jutsu1 =""
-        self.jutsu2 =""
-        self.jutsu3 =""
-        self.jutsu4 =""
+        self.jutsu = ""
         self.local = ""
-        self.style = "none" #ninja type, eg. ninjutsu, genjutsu, taijutsu#
-        self.gekkei = "none" #sharingan, byakugan, etc#
+        self.style = "none" # ninja type, eg. ninjutsu, genjutsu, taijutsu
 
     def getstats(self):
         # for debugging #
@@ -61,7 +56,7 @@ class player(object):
         print "i have %s kunai knives" % self.kunai
         print "i have %s shruiken" % self.shruiken
         print "what type of ninja i am: " + self.style
-        #print "any kekei genkai i have: " + self.gekkei
+       
 
 
     def reset(self):
@@ -72,6 +67,9 @@ class player(object):
         self.stamina = self.baseST
 #create the player instance
 p = player()
+
+# defines a pause function from the time module so that the code doesnt run too
+# fast for the user to read. 
 
 def wait(x):
     time.sleep(x)
@@ -90,7 +88,6 @@ class opponent (object):
         self.speed = 10
         self.local = ""
         self.style = "none" #ninja type, eg. ninjutsu, genjutsu, taijutsu#
-        self.gekkei = "none" #sharingan, byakugan, etc#
         self.ai = 0
     def reset(self):
         #makes stats reset to base values for healing and battles
@@ -168,7 +165,6 @@ class gaara(object):
         self.jutsu = []
         self.local = "Hidden Sand"
         self.style = "ninjutsu"
-        self.gekkei = "none"
         
 class sasuke(object):
      def __init__(self, local = "Hidden Leaf", baseA = 10, speed = 20, baseS = 20, baseC = 125, baseST = 50, baseH = 150, health = 150, chakra = 125, inventory = [], jutsu = [], style = "ninjutsu", gekkei = "sharingan"):
@@ -181,7 +177,6 @@ class sasuke(object):
         self.baseST = 50
         self.baseS = 20
         self.speed = 20
-        self.inventory = []
         self.justu = []
         self.local = "Hidden Leaf"
         self.style = "ninjutsu"
@@ -198,7 +193,6 @@ class naruto(object):
         self.baseST = 100
         self.baseS = 15
         self.speed = 15
-        self.inventory = []
         self.jutsu = []
         self.local = "Hidden Leaf"
         self.style = "taijutsu"
@@ -215,7 +209,6 @@ class neji(object):
         self.baseST = 75
         self.baseS = 15
         self.speed = 15
-        self.inventory = []
         self.justu = []
         self.local = "Hidden Leaf"
         self.style = "taijutsu"
@@ -232,7 +225,6 @@ class lee(object):
         self.baseST = 100
         self.baseS = 20
         self.speed = 20
-        self.inventory = []
         self.jutsu = []
         self.local = "Hidden Leaf"
         self.style = "taijutsu"
@@ -249,7 +241,6 @@ class kiba(object):
         self.baseST = 75
         self.baseS = 15
         self.speed = 15
-        self.inventory = []
         self.jutsu = []
         self.local = "Hidden Leaf"
         self.style = "taijutsu"
@@ -312,7 +303,22 @@ def battle():
             o = kiba()
             print "Your Opponent will be the beast ninja of the leaf, Kiba!"
         elif p.score == 8:
-            o = 
+            o = lee()
+            print "Your Opponent will be the Taijutsu master Lee of the leaf!"
+            
+        elif p.score == 12:
+            o = neji()
+            print "Your Opponent will be the Byakugan user Neji Hyuuga!"
+        elif  p.score == 16:
+            o = naruto()
+            print "Your opponent will be the number one unpredictable ninja (who's still a genin), NARUTO!"
+        elif: p.score == 20:
+            o = sasuke()
+            print "Your Opponent will be the vengeful survivior of the Uchiha, Sasuke!"
+        elif: p.score == 24:
+            o = gaara()
+            print "Your Final opponent will be the demon of the sand, GAARA!"
+            
         else:
             o = opponent()
             o.randomize()
@@ -336,7 +342,7 @@ def battle():
             else:
                 turn = 2
             #the range variables, determines what moves can be used
-            bleeding = False
+             
             Range = 0
             Dist = ""
             if Range == 0:
@@ -377,6 +383,13 @@ def battle():
             previous = ""
 
             #creates immersive health and stamina variables
+            bleeding = False
+            bandage = False
+            bandage_time = 3
+            if bandage_time = 0:
+                bandage = False
+            if bandage_time < 0:
+                bandage_time = 0
             health = ""
             stamina = ""
             if p.health > 75:
@@ -387,10 +400,11 @@ def battle():
                 health = "badly battered"
             if p.health < 25 and p.health >15:
                 health = "heavily injured"
-            if p.health < 15:
-                health = "bleeding out"
-                bleeding = True
-
+            if bandage == False:
+                if p.health < 15:
+                    health = "bleeding out"
+                    bleeding = True
+            
 
 
 
@@ -413,6 +427,7 @@ def battle():
 
             #player turn code#
             while turn == 1:
+                bandage_time - 1
                 pdef = False
                 previous = last
                 print  "You are %s" % health + " and feel %s" % stamina
@@ -532,6 +547,7 @@ def battle():
                                 else:
                                     print "You take out one of the bandages and wrap it quickly around your wounds."
                                     print "you are no longer bleeding"
+                                    bandage = True
                                     turn = 2
 
 #----------------------------------ai turn basic: ----------------------- #
