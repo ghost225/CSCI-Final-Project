@@ -187,7 +187,7 @@ class sasuke(object):
         self.style = "ninjutsu"
         self.gekkei = "sharingan"
 
-class naruto (object):
+class naruto(object):
     def __init__(self, local = "Hidden Leaf", baseA = 7, speed = 15, baseS = 15, baseC = 200, baseST = 100, baseH = 100, health = 100, chakra = 200, inventory = [], jutsu = [], style = "taijutsu", gekkai = "none"):
         object.__init__(self)
         self.baseH = 100
@@ -221,7 +221,7 @@ class neji(object):
         self.style = "taijutsu"
         self.gekkei = "byakugan"
 
-class lee (object):
+class lee(object):
     def __init__(self, local = "Hidden Leaf", baseA = 9, speed = 20, baseS = 20, baseC = 50, baseST = 100, baseH = 100, health = 100, chakra = 50, inventory = [], jutsu = [], style = "taijutsu", gekkei = "none"):
         object.__init__(self)
         self.baseH = 100
@@ -238,7 +238,7 @@ class lee (object):
         self.style = "taijutsu"
         self.gekkei = "none"
         
-class kiba (object):
+class kiba(object):
     def __init__(self, local = "Hidden Leaf", baseA = 6, speed = 15, baseS = 15, baseC = 75, baseST = 75, baseH = 100, health = 100, chakra = 75, inventory = [], jutsu = [], style = "taijutsu", gekkei = "none"):
         object.__init__(self)
         self.baseH = 100
@@ -264,7 +264,7 @@ class kiba (object):
 def battle():
     def enemy_attack():
         if p.stamina > 0:
-            p.stamina -= o.baseA - Range
+            p.stamina -= (o.baseA - Range)
             print "you block the enemy's attack"
             print "you feel %s" % stamina
             print ""
@@ -308,14 +308,21 @@ def battle():
 
 
 
-    if p.score < 3:
-        o = opponent()
-        o.randomize()
+        if p.score == 4:
+            o = kiba()
+            print "Your Opponent will be the beast ninja of the leaf, Kiba!"
+        elif p.score == 8:
+            o = 
+        else:
+            o = opponent()
+            o.randomize()
+            
+            
         enemy_foodpill = 10
         enemy_kunai = 5
         enemy_shruiken = 5
 
-
+        
         print "Your Opponent will be a %s ninja." % o.local
         print ""
         print "Your opponent is a %s" % o.style
