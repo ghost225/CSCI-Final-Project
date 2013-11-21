@@ -763,12 +763,29 @@ class Jutsu(object):
     def __init__(self):
         object.__init__(self)
 
-
-    def bc_strike():
+    def chakra_strike():
+        p.chakra - 50
+        print "How much chakra will you use? Available chakra: %d" % p.chakra
+        chakra_use = raw_input("Please input a valid number:")
+        chakra_use == int(chakra_use)
+        p.chakra - int(chakra_use)
+        o.health - int(chakra_use)
+    
+    def chakra_shield():
+        p.chakra - 20
+        print "How much chakra will you use? Available chakra: %d" % p.chakra
+        chakra_use = raw_input("Please input a valid number:")
+        chakra_use == int(chakra_use)
         pass
-
-    def ac_strike():
-        pass
+        
+    def healing():
+        p.chakra - 30
+        print "How much chakra will you use? Available chakra: %d" % p.chakra
+        chakra_use = raw_input("Please input a valid number:")
+        chakra_use == int(chakra_use)
+        p.chakra - int(chakra_use)
+        p.health + int(chakra_use)
+        
 
 
 
