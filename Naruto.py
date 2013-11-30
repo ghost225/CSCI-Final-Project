@@ -765,27 +765,63 @@ class Jutsu(object):
 
     def chakra_strike():
         p.chakra - 50
-        print "How much chakra will you use? Available chakra: %d" % p.chakra
-        chakra_use = raw_input("Please input a valid number:")
+        print "You try and focus your chakra to your limbs for a more powerful strike."
+        print "Available chakra: %d" % p.chakra
+        chakra_use = raw_input("How much chakra will you use?: ")
         chakra_use == int(chakra_use)
         p.chakra - int(chakra_use)
-        o.health - int(chakra_use)
+        if Range <= 0
+            o.health - int(chakra_use)
+        else print "Your strike fell short and your opponent avoided it easily."
     
     def chakra_shield():
         p.chakra - 20
-        print "How much chakra will you use? Available chakra: %d" % p.chakra
-        chakra_use = raw_input("Please input a valid number:")
+        print "You release chakra in an effort to stop your opponent's attack."
+        print "Available chakra: %d" % p.chakra
+        chakra_use = raw_input("How much chakra will you use?: ")
         chakra_use == int(chakra_use)
+    #will reduce opponent's damage from their next attack    
         pass
         
     def healing():
         p.chakra - 30
-        print "How much chakra will you use? Available chakra: %d" % p.chakra
-        chakra_use = raw_input("Please input a valid number:")
+        print "You focus your chakra inward in order to heal your injuries."
+        print "Available chakra: %d" % p.chakra
+        chakra_use = raw_input("How much chakra will you use?: ")
         chakra_use == int(chakra_use)
         p.chakra - int(chakra_use)
         p.health + int(chakra_use)
         
+    def sharingan_passive():
+        p.chakra - 30
+        print "Your senses begin to sharpen as the blood of the Uchiha clan rises in your veins."
+        print "You can easily predict your opponent's next move with incredible accuracy."
+    #future implementation of a dodge mechanic.
+    #increase of dodge rate and accuracy
+    #wears off in aproximately 3 turns
+        pass
+        
+    def sharingan_active():
+        p.chakra - 20
+        print "Your mind races as your body automaticaly copies your opponent's hand seals."
+        print "You try to unleash an exact copy of your opponent's last jutsu."
+        o.jutsu
+    #once the jutsu mechanic is in place, this will refer back to the
+    #opponent's jutsu function and perfom that in place of your action.
+        pass
+    
+    def byakugan():
+        
+    
+    def shinra_tensei():
+        
+        
+    def chidori():
+        
+        
+    def rasengan():
+        
+    
 
 
 
